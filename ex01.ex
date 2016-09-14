@@ -61,7 +61,7 @@ defmodule Ex01 do
   #####################################################################
 
   sum3a = fn
-    (a, b, c) -> sum2b.(a, b) + sum2b.(c, 0)
+    (a, b, c) -> sum2b.(a, b) |> sum2b.(c)
   end
 
   assert sum3a.(1, 3, 5)  == 9
@@ -73,7 +73,7 @@ defmodule Ex01 do
   # Do the same using the & notation #
   ####################################
 
-  sum3b = &(sum2b.(&1, &2) + sum2b.(&3, 0))
+  sum3b = &(sum2b.(&1, &2) |> sum2b.(&3))
 
   assert sum3b.(1, 3, 5)  == 9
   assert sum3b.(1, -3, 5) == 3
