@@ -85,7 +85,7 @@ defmodule Ex03 do
 
   """
 
-  def list_contains([], _num),        do: false
+  def list_contains([], _num),       do: false
   def list_contains([ h | t ], num), do: h == num or list_contains(t, num)
 
   ##############################################################################
